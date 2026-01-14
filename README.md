@@ -1,4 +1,4 @@
-We provide the code for our EXP2 strategy on Decoupled-Cosine and CEC. 
+We provide the code for our EXP2 strategy. 
 
 ## Requirements
 - [PyTorch >= version 1.1](https://pytorch.org)
