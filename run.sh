@@ -1,0 +1,16 @@
+python train.py -project base -dataset cub200 -base_mode 'ft_cos' -new_mode 'avg_cos' -gamma 0.1 -lr_base 0.1 -lr_new 0.1 -decay 0.0005 -epochs_base 0 -schedule Milestone -milestones 30 40 60 80 -gpu 4 -temperature 16 -model_dir params/cub200/session0_max_acc7552_cos.pth >>CUB-Decoupled-Cosine.txt
+python train.py -project base -dataset FGVCAircraft -base_mode 'ft_cos' -new_mode 'avg_cos' -gamma 0.1 -lr_base 0.001 -lr_new 0.1 -decay 0.0005 -epochs_base 0 -schedule Milestone -milestones 30 40 60 80 -gpu 4 -temperature 16  -batch_size_base 16 -model_dir params/FGVCAircraft/session0_max_acc.pth >>FGVCAircraft-Decoupled-Cosine.txt
+python train.py -project base -dataset StanfordCars -base_mode 'ft_cos' -new_mode 'avg_cos' -gamma 0.1 -lr_base 0.1 -lr_new 0.1 -decay 0.0005 -epochs_base 100 -schedule Milestone -milestones 30 40 60 80 -gpu 0 -temperature 16  >>StanfordCars-Decoupled-Cosine.txt
+python train.py -project base -dataset StanfordDogs -base_mode 'ft_cos' -new_mode 'avg_cos' -gamma 0.1 -lr_base 0.1 -lr_new 0.1 -decay 0.0005 -epochs_base 100 -schedule Milestone -milestones 30 40 60 80 -gpu 0 -temperature 16  >>StanfordDogs-Decoupled-Cosine.txt
+python train.py -project base -dataset cifar100  -base_mode 'ft_cos' -new_mode 'avg_cos' -gamma 0.1 -lr_base 0.1 -lr_new 0.1 -decay 0.0005 -epochs_base 100 -schedule Milestone -milestones 60 70 -gpu 0 -temperature 16 >>CIFAR-Decoupled-Cosine.txt
+python train.py -project base -dataset mini_imagenet -base_mode 'ft_cos' -new_mode 'avg_cos' -gamma 0.1 -lr_base 0.1 -lr_new 0.1 -decay 0.0005 -epochs_base 100 -schedule Milestone -milestones 40 70 -gpu 0 -temperature 16 >>miniimagenet-Decoupled-Cosine.txt
+
+python train.py -project cec -dataset cub200 -epochs_base 100 -episode_way 15 -episode_shot 1 -episode_query 10 -low_way 15 -low_shot 1 -lr_base 0.0002 -lrg 0.0002 -step 20 -gamma 0.5 -gpu 0 -model_dir params/cub200/session0_max_acc7552_cos.pth  >>CUB-CEC.txt
+python train.py -project cec -dataset FGVCAircraft -epochs_base 100 -episode_way 15 -episode_shot 1 -episode_query 10 -low_way 15 -low_shot 1 -lr_base 0.0002 -lrg 0.0002 -step 20 -gamma 0.5 -gpu 0 -model_dir params/FGVCAircraft/session0_max_acc.pth  >>FGVCAircraft-CEC.txt
+python train.py -project cec -dataset StanfordCars -epochs_base 100 -episode_way 15 -episode_shot 1 -episode_query 10 -low_way 15 -low_shot 1 -lr_base 0.0002 -lrg 0.0002 -step 20 -gamma 0.5 -gpu 0 -model_dir params/StanfordCars/session0_max_acc.pth  >>StanfordCars-CEC.txt
+python train.py -project cec -dataset StanfordDogs -epochs_base 100 -episode_way 15 -episode_shot 1 -episode_query 10 -low_way 15 -low_shot 1 -lr_base 0.0002 -lrg 0.0002 -step 20 -gamma 0.5 -gpu 0 -model_dir params/StanfordDogs/session0_max_acc.pth  >>StanfordDogs-CEC.txt
+python train.py -project cec -dataset cifar100 -epochs_base 100 -episode_way 15 -episode_shot 1 -low_way 15 -low_shot 1 -lr_base 0.002 -lrg 0.0002 -step 20 -gamma 0.5 -gpu 0 -model_dir params/cifar100/session0_max_acc7455_cos.pth >>CIFAR-CEC.txt
+python train.py -project cec -dataset mini_imagenet -epochs_base 100 -episode_way 15 -episode_shot 1 -low_way 15 -low_shot 1 -lr_base 0.0002 -lrg 0.0002 -step 20 -gamma 0.5 -gpu 0 -model_dir params/miniimagenet/session0_max_acc70367_cos.pth   >>miniimagenet-CEC.txt
+
+
+
